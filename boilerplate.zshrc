@@ -1,15 +1,27 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # ZPLUG
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
+
+# pure prompt - https://github.com/sindresorhus/pure
+brew install pure
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+autoload -U promptinit; promptinit
+prompt pure
+zstyle :prompt:pure:path color '#89CFF0'
+
 zplug load
 
 # ALIASES
-alias activate_venv=". .venv/bin/activate"
-alias create_venv="python -m venv .venv"
+alias venv_activate=". .venv/bin/activate"
+alias venv_create="python -m venv .venv"
 
 # PYENV
 export PYENV_ROOT="$HOME/.pyenv"
@@ -17,3 +29,4 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # ENV VARS
+export PATH="$HOME/.local/bin:$PATH"

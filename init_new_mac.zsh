@@ -11,10 +11,14 @@ killall Finder
 
 # some brew installs
 brew install pyenv
+brew install --cask lunar # https://lunar.fyi/
+brew install --cask iterm2
+brew install zplug
 
 #adding custom command path to .zshrc
 echo "#custom zsh commands" >> ~/.zshrc
 echo "path=('$this_dir/zsh_commands' \$path)" >> ~/.zshrc
 
-# zplug
-git clone https://github.com/zplug/zplug ~/.zplug
+
+# poetry
+curl -sSL https://install.python-poetry.org | python3 -
