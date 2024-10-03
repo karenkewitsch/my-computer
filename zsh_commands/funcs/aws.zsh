@@ -10,6 +10,8 @@ aws_login(){
 }
 
 aws_export_creds(){
-  echo "Exporting profile $1 credentials to env vars"
-  export $(aws configure export-credentials --profile $1 --format env-no-export | xargs -L1)
+  creds=$(aws configure export-credentials --profile $1 --format env-no-export)
+  export $(echo $creds | xargs -L1)
+  echo $creds | pbcopy
+  echo "Profile $1 credentials exported to env vars and in clipboard!"
 }
