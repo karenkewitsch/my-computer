@@ -19,4 +19,5 @@ venv_create() {
         python -m venv "$1/.venv"
     fi
     venv_activate $1
+    pip install --upgrade pip
 }
