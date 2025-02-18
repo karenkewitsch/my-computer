@@ -20,4 +20,5 @@ venv_create() {
     fi
     venv_activate $1
     pip install --upgrade pip
+    pip install poetry
 }
