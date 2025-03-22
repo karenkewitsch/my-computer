@@ -9,14 +9,16 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:3
 
 # pure prompt - https://github.com/sindresorhus/pure
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-autoload -U promptinit; promptinit
-prompt pure
-zstyle :prompt:pure:path color '#89CFF0'
+# fpath+=("$(brew --prefix)/share/zsh/site-functions")
+# zplug mafredri/zsh-async, from:github
+# zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+# autoload -U promptinit; promptinit
+# prompt pure
+# zstyle :prompt:pure:path color '#89CFF0'
 
 zplug load
+
+eval "$(starship init zsh)"
 
 # PYENV
 export PYENV_ROOT="$HOME/.pyenv"
@@ -27,4 +29,4 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Load custom zsh funcs
-source ~/repos/my_mac_env/zsh_commands/load_funcs.zsh
+source "${0:a:h}/zsh_commands/load_funcs.zsh"

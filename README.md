@@ -1,7 +1,7 @@
 
 
 1. Try and run ``ìnit_new_mac.zsh``` or execute each command within.
-2. Copy/paste the zsh boilerplate. ```cp boilerplate.zshrc ~/.zshrc```.
+2. Add to ~/.zshrc ```source ~/repos/my_mac_env/zshrc_include.zsh```.
 
 ## Apps
 These are not installed with brew or other cli:

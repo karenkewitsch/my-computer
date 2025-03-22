@@ -14,7 +14,8 @@ brew install --cask lunar # https://lunar.fyi/
 brew install --cask iterm2
 brew install --cask visual-studio-code
 brew install zplug
-brew install pure
+brew install font-hack-nerd-font
+brew install starship # shell-prompt
 
 
 # poetry
