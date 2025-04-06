@@ -12,11 +12,13 @@ killall Finder
 brew install pyenv
 brew install --cask lunar # https://lunar.fyi/
 brew install --cask iterm2
-brew install --cask visual-studio-code
-brew install zplug
+
+
 brew install font-hack-nerd-font
 brew install starship # shell-prompt
+brew install fzf # fuzzy finder -> github.com/junegunn/fzf
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
 
-
-# poetry
-curl -sSL https://install.python-poetry.org | python3 -
+# rust install
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

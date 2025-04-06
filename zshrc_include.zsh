@@ -1,24 +1,9 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# ZPLUG
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search", defer:3
-
-# pure prompt - https://github.com/sindresorhus/pure
-# fpath+=("$(brew --prefix)/share/zsh/site-functions")
-# zplug mafredri/zsh-async, from:github
-# zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-# autoload -U promptinit; promptinit
-# prompt pure
-# zstyle :prompt:pure:path color '#89CFF0'
-
-zplug load
-
 eval "$(starship init zsh)"
+source <(fzf --zsh)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # PYENV
 export PYENV_ROOT="$HOME/.pyenv"
