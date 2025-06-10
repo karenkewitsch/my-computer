@@ -22,3 +22,13 @@ venv_create() {
     pip install --upgrade pip
     pip install poetry
 }
+
+venv_reset() {
+    # set variable to input arg if there else use PWD
+    venv_path=${1:-$(pwd)}
+    venv_path=$venv_path/.venv
+    echo "Resetting venv: $venv_path"
+    deactive 2>/dev/null || true
+    rm -rf $venv_path 2>/dev/null
+    venv_create $venv_path
+}
