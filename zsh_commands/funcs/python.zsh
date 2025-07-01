@@ -30,5 +30,5 @@ venv_reset() {
     echo "Resetting venv: $venv_path"
     deactive 2>/dev/null || true
     rm -rf $venv_path 2>/dev/null
-    venv_create $venv_path
+    venv_create 
 }
