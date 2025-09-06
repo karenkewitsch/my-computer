@@ -1,3 +1,3 @@
 ```bash
-stow -t ~ git
+stow -t ~ git aws
 ```
