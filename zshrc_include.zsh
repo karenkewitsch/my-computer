@@ -5,11 +5,6 @@ source <(fzf --zsh)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# PYENV
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
 # ENV VARS
 export PATH="$HOME/.local/bin:$PATH"
 

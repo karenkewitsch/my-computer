@@ -19,8 +19,5 @@ brew install fzf # fuzzy finder -> github.com/junegunn/fzf
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
-# python / uv install
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
 # rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
