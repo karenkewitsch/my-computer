@@ -1,12 +1,15 @@
 aws_login(){
   case $1 in
     prod)
+      aws_profile=lc-production
       aws sso login --profile lc-production --no-browser
       ;;
     staging)
+      aws_profile=lc-staging
       aws sso login --profile lc-staging
       ;;
-    esac 
+    esac
+  export AWS_PROFILE=$aws_profile
 }
 
 aws_export_creds(){
