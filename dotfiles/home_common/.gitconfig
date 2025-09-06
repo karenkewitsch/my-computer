@@ -14,6 +14,6 @@
 [init]
 	defaultBranch = master
 
-[includeIf "gitdir:~/lindcapital/repos"]
+[includeIf "gitdir:~/lindcapital"]
   [user]
     email = mso@lindcapital.com
