@@ -8,5 +8,5 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # ENV VARS
 export PATH="$HOME/.local/bin:$PATH"
 
-# Load custom zsh funcs
-source "${0:a:h}/zsh_commands/load_funcs.zsh"
+# Load common shell stuff
+source ~/.rc_include.sh
