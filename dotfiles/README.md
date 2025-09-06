@@ -1,0 +1,3 @@
+```bash
+stow -t ~ git
+```

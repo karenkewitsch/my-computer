@@ -9,8 +9,8 @@ killall Finder
 # installing homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # some brew installs
-#brew install pyenv
 brew install --cask lunar # https://lunar.fyi/
+brew install stow
 brew install --cask iterm2
 
 brew install font-hack-nerd-font

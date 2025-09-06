@@ -3,6 +3,13 @@
 1. Try and run ``ìnit_new_mac.zsh``` or execute each command within.
 2. Add to ~/.zshrc ```source ~/repos/my_mac_env/zshrc_include.zsh```.
 
+
+## Stack
+- stow -> for sync dotfiles
+- starship
+- vscode
+- alacritty
+
 ## Apps
 These are not installed with brew or other cli:
 

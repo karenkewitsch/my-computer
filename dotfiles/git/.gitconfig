@@ -1,0 +1,19 @@
+[user]
+  name = Markus Sørensen
+  email = markusks91@me.com
+
+[push]
+	autoSetupRemote = true
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+
+[init]
+	defaultBranch = master
+
+[includeIf "gitdir:~/lindcapital/repos"]
+  [user]
+    email = mso@lindcapital.com
