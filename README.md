@@ -23,7 +23,8 @@ echo "source ~/.zshrc_include.zsh" >> ~/.zshrc
 - stow -> for sync dotfiles
 - starship
 - vscode
-- alacritty
+- alacritty (terminal)
+- eza
 
 ## Apps not installed via shell
 These are not installed via scripts executed above:

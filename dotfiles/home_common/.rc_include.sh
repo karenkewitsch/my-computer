@@ -7,3 +7,5 @@ for file in "$HOME/.bash_funcs/"*; do
     fi
 done
 
+# EZA for ls
+alias ls='eza -lah --group-directories-last'

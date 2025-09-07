@@ -18,6 +18,8 @@ brew install starship # shell-prompt
 brew install fzf # fuzzy finder -> github.com/junegunn/fzf
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew install alacritty
+brew install eza
 
 # rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
