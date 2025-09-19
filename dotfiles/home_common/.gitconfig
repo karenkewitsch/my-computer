@@ -17,3 +17,5 @@
 [includeIf "gitdir:~/lindcapital"]
   [user]
     email = mso@lindcapital.com
+[pull]
+	rebase = true
