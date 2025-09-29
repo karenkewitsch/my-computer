@@ -1,10 +1,11 @@
 venv_a() {
-    if [ -z "$1" ]; then
-        echo "Activating venv in current dir."
-        # Call the default command here
-        source .venv/bin/activate
-    else
-        echo "Activating venv in: $1."
-        source "$1/.venv/bin/activate"
-    fi
+    venv_dir="${1:-.venv}"
+    echo "Activating venv in: $venv_dir."
+    source "$venv_dir/bin/activate"
+}
+
+venv_r() {
+    deactivate
+    venv_dir="${1:-.venv}"
+    rm -r "$venv_dir"
 }
