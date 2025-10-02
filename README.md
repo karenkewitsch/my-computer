@@ -21,10 +21,10 @@ echo "source ~/.zshrc_include.zsh" >> ~/.zshrc
 
 ## Stack
 - stow -> for sync dotfiles
-- starship
-- vscode
-- alacritty (terminal)
-- eza
+- starship -> shell prompt
+- vscode -> editor
+- alacritty -> terminal
+- eza -> ls replacement for shell
 
 ## Apps not installed via shell
 These are not installed via scripts executed above:
