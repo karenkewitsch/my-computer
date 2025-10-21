@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Apple Music
+Comment=Apple Music
+Exec=omarchy-launch-webapp https://beta.music.apple.com/dk/home
+Terminal=false
+Type=Application
+Icon=/home/mso/.local/share/applications/icons/apple_music.png
+StartupNotify=true

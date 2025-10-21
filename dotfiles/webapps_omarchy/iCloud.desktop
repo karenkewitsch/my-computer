@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=iCloud
+Comment=iCloud
+Exec=omarchy-launch-webapp https://www.icloud.com/
+Terminal=false
+Type=Application
+Icon=/home/mso/.local/share/applications/icons/iCloud.png
+StartupNotify=true
