@@ -1,11 +1,8 @@
 #!/bin/bash
 
-sudo pacman -S --needed stow visual-studio-code-bin openconnect google-chrome
+sudo pacman -S --needed stow visual-studio-code-bin openconnect google-chrome zsh
 
 # aws cli / also update
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
-
-# some vpn shit playing with openconnect
-uv tool install -p 3.10 openconnect-sso

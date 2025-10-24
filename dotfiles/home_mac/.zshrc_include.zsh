@@ -1,12 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-eval "$(starship init zsh)"
-source <(fzf --zsh)
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # ENV VARS
 export PATH="$HOME/.local/bin:$PATH"
 
 # Load common shell stuff
-source ~/.rc_include.sh
+source ~/.zshrc_common.zsh

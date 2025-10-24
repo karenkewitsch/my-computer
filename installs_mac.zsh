@@ -11,13 +11,10 @@ killall Finder
 # some brew installs
 brew install --cask lunar # https://lunar.fyi/
 brew install stow
-brew install --cask iterm2
 
 brew install font-hack-nerd-font
 brew install starship # shell-prompt
 brew install fzf # fuzzy finder -> github.com/junegunn/fzf
-brew install zsh-autosuggestions
-brew install zsh-syntax-highlighting
 brew install alacritty
 brew install eza
 
