@@ -26,3 +26,8 @@ setopt SHARE_HISTORY
 
 # aliases
 alias ls='eza -lah --group-directories-last'
+alias gcm='git commit -m'
+
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
