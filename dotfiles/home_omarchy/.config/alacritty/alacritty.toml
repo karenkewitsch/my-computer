@@ -1,0 +1,4 @@
+general.import = [ 
+    "~/.config/omarchy/current/theme/alacritty.toml",
+    "~/.config/alacritty/common.toml" 
+    ]
