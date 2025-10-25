@@ -12,5 +12,6 @@ stow -t ~ home_mac
 ## Omarchy
 
 ```bash
+stow -t ~ home_omarchy
 stow -t ~/.local/share/applications webapps_omarchy
 ```

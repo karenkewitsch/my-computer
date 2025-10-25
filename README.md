@@ -2,7 +2,7 @@
 
 ## Setup new machine
 
-### Installs of packages and apps (via shell)
+### Install packages and apps (via shell)
 Make relevant install by executing scripts or execute each command within:
 
 ```bash
@@ -26,7 +26,7 @@ echo "source ~/.zshrc_include.zsh" >> ~/.zshrc
 - alacritty -> terminal
 - eza -> ls replacement for shell
 
-## Apps not installed via shell
+## Apps not instal led via shell
 These are not installed via scripts executed above:
 
 ### Macos
