@@ -23,6 +23,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
 setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST # when trimming, remove duplicates first
 
 # aliases
 alias ls='eza -lah --group-directories-last'
