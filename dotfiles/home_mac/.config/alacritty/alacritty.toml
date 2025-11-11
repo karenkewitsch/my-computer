@@ -1,5 +1,4 @@
 general.import = [ "~/.config/alacritty/common.toml" ]
 
-[terminal.shell]
-program = "/bin/zsh"
-args = ["-l"]
+[font]
+size = 12

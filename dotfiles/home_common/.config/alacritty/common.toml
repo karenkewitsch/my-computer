@@ -19,10 +19,6 @@ bindings = [
 { key = "Insert", mods = "Control", action = "Copy" }
 ]
 
-[terminal.shell]
-program = "/usr/bin/zsh"
-args = ["-l"]
-
 [cursor.style] 
 shape = "Beam"
 blinking = "Always"

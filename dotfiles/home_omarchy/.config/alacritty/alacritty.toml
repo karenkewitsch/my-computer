@@ -2,3 +2,7 @@ general.import = [
     "~/.config/omarchy/current/theme/alacritty.toml",
     "~/.config/alacritty/common.toml" 
     ]
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+args = ["-l"]
