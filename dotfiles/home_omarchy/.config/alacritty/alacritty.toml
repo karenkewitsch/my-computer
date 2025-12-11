@@ -6,3 +6,6 @@ general.import = [
 [terminal.shell]
 program = "/usr/bin/zsh"
 args = ["-l"]
+
+[window]
+decorations = "None"
