@@ -18,6 +18,9 @@ brew install fzf # fuzzy finder -> github.com/junegunn/fzf
 brew install alacritty
 brew install eza
 brew install --cask visual-studio-code
+brew install --cask google-chrome
+brew install --cask nikitabobko/tap/aerospace
+brew install --cask bitwarden
 
 # rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -27,3 +30,5 @@ defaults write com.apple.Finder AppleShowAllFiles true
 killall Finder
 defaults write com.apple.dock autohide 1
 defaults write "Apple Global Domain" _HTHideMenuBar 1
+defaults write "Apple Global Domain" SLSMenuBarUseBlurredAppearance 0
+defaults write com.apple.AppleMultitouchTrackpad Clicking 1
