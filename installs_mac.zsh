@@ -22,6 +22,8 @@ brew install --cask google-chrome
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask bitwarden
 
+brew install --cask slack
+
 # rust install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
