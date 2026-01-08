@@ -1,4 +1,9 @@
-
+## Stack
+- stow -> for sync dotfiles
+- starship -> shell prompt
+- vscode -> editor
+- alacritty -> terminal
+- eza -> ls replacement for shell
 
 ## Setup new machine
 
@@ -18,19 +23,13 @@ Do the same with the os specific install.
 echo "source ~/.zshrc_include.zsh" >> ~/.zshrc
 ```
 
+### Macos manual settings
+Stuff that currently is not manages with scripts:
 
-## Stack
-- stow -> for sync dotfiles
-- starship -> shell prompt
-- vscode -> editor
-- alacritty -> terminal
-- eza -> ls replacement for shell
+- Keyboard
+    - Switch ctrl/cmd keys
+    - Turn off mission control
+    - Set close/quit app to ctrl
+    - Set spotlight to ctrl
 
-## Apps not instal led via shell
-These are not installed via scripts executed above:
-
-### Macos
-- [Magnet](https://magnet.crowdcafe.com/) for windows management
-- [vscode](https://code.visualstudio.com/)
-- [xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12/)
 
