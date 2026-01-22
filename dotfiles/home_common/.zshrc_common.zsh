@@ -29,3 +29,7 @@ setopt HIST_EXPIRE_DUPS_FIRST # when trimming, remove duplicates first
 alias ls='eza -lah --group-directories-last'
 alias gcm='git commit -m'
 alias gp='git push'
+
+# uv config of indexs
+export UV_KEYRING_PROVIDER=subprocess
+export UV_INDEX_ARO_PYPI_USERNAME=oauth2accesstoken
