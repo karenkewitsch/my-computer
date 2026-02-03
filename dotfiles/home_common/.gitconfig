@@ -13,10 +13,9 @@
 
 [init]
 	defaultBranch = master
-	
+
 [pull]
 	rebase = true
 
-[includeIf "gitdir:~/aro"]
-  [user]
-    email = markus@aro.inc
+[includeIf "gitdir:~/aro/"]
+	path = ~/.gitconfig-aro
