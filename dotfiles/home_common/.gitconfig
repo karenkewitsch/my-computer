@@ -13,9 +13,10 @@
 
 [init]
 	defaultBranch = master
-
-[includeIf "gitdir:~/lindcapital"]
-  [user]
-    email = mso@lindcapital.com
+	
 [pull]
 	rebase = true
+
+[includeIf "gitdir:~/aro"]
+  [user]
+    email = markus@aro.inc
