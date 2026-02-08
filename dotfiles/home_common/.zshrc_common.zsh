@@ -33,4 +33,4 @@ alias gp='git push'
 # uv config of indexs
 export UV_KEYRING_PROVIDER=subprocess
 export UV_INDEX_ARO_PYPI_USERNAME=oauth2accesstoken
-export UV_INDEX=aro-pypi=https://europe-west3-python.pkg.dev/arosource-dev/aro-pypi/simple/
+export UV_INDEX="https://pypi.org/simple aro-pypi=https://europe-west3-python.pkg.dev/arosource-dev/aro-pypi/simple/"
