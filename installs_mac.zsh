@@ -21,6 +21,7 @@ brew install --cask visual-studio-code
 brew install --cask google-chrome
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask bitwarden
+brew install gh
 
 brew install --cask slack
 
