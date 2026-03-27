@@ -124,8 +124,8 @@ on-mode-changed = []
     alt-shift-right = 'move right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-    ctr-minus = 'resize smart -50'
-    ctr-equal = 'resize smart +50'
+    ctrl-minus = 'resize smart -50'
+    ctrl-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     ctrl-1 = 'workspace 1'
