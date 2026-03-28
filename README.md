@@ -8,12 +8,19 @@
 ## Setup new machine
 
 ### Install packages and apps (via shell)
-Make relevant install by executing scripts or execute each command within:
+Run the OS-specific install script. It will also run the common installs automatically.
 
-```bash
-. installs_common.sh
+**macOS:**
+```zsh
+. installs_mac.zsh
 ```
-Do the same with the os specific install.
+
+**Omarchy/Linux:**
+```bash
+. installs_omarchy.sh
+```
+
+SSH keys for GitHub are set up automatically as part of the install scripts.
 
 ### Dotfiles
 1. ```cd dotfiles``` and follow readme within dir
@@ -23,13 +30,19 @@ Do the same with the os specific install.
 echo "source ~/.zshrc_include.zsh" >> ~/.zshrc
 ```
 
-### Macos manual settings
-Stuff that currently is not manages with scripts:
+### Macos
+Stuff that currently is not managed with scripts:
 
-- Keyboard
+#### Settings/configurations
+- Keyboard shortcuts
     - Switch ctrl/cmd keys
     - Turn off mission control
     - Set close/quit app to ctrl
+        - App shortcuts -> All applications -> 'Close Window' & 'Close'
     - Set spotlight to ctrl
 
+VScode shortcuts are currently relying on ctl/cmd switch.
+
+#### Apps
+- [Docker desktop](https://www.docker.com/)
 
