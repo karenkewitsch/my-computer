@@ -25,9 +25,10 @@ sudo pacman -S --needed \
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
+rm -rf awscliv2.zip aws/
 
 # common installs
 . "$this_dir/installs_common.sh"
 
 # setup ssh keys with github
-. "$this_dir/installs/github_ssh.sh"
+bash "$this_dir/installs/github_ssh.sh"

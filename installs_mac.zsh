@@ -16,6 +16,8 @@ else
 fi
 
 xcode-select --install # basic stuff. git, gcc, etc.
+echo "Waiting for xcode command line tools to finish installing..."
+until xcode-select -p &>/dev/null; do sleep 5; done
 
 # installing homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -55,4 +57,4 @@ brew install --cask slack
 . "$this_dir/installs_common.sh"
 
 # setup ssh keys with github
-. "$this_dir/installs/github_ssh.sh"
+bash "$this_dir/installs/github_ssh.sh"
