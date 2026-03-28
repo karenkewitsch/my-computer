@@ -15,12 +15,16 @@ else
     echo "Keeping: $current_name"
 fi
 
-xcode-select --install # basic stuff. git, gcc, etc.
-echo "Waiting for xcode command line tools to finish installing..."
-until xcode-select -p &>/dev/null; do sleep 5; done
+if ! xcode-select -p &>/dev/null; then
+    xcode-select --install
+    echo "Waiting for xcode command line tools to finish installing..."
+    until xcode-select -p &>/dev/null; do sleep 5; done
+fi
 
 # installing homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew &>/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # some brew installs
@@ -40,7 +44,9 @@ brew install --cask bitwarden
 brew install gh
 
 # rust install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+if ! command -v rustup &>/dev/null; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
 
 # set settings config
 defaults write com.apple.Finder AppleShowAllFiles true

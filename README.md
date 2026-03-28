@@ -12,12 +12,12 @@ Run the OS-specific install script. It will also run the common installs automat
 
 **macOS:**
 ```zsh
-. installs_mac.zsh
+zsh installs_mac.zsh
 ```
 
 **Omarchy/Linux:**
 ```bash
-. installs_omarchy.sh
+bash installs_omarchy.sh
 ```
 
 SSH keys for GitHub are set up automatically as part of the install scripts.
