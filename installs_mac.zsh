@@ -49,7 +49,7 @@ brew install --cask slack
 
 # macos settings
 defaults write com.apple.Finder AppleShowAllFiles true
-defaults write com.apple.dock autohide 1
+defaults write com.apple.dock autohide -bool true
 defaults write "Apple Global Domain" _HTHideMenuBar 1
 defaults write "Apple Global Domain" SLSMenuBarUseBlurredAppearance 0
 defaults write com.apple.AppleMultitouchTrackpad Clicking 1
