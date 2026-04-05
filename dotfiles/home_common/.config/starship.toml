@@ -1,0 +1,21 @@
+format = """${username}${hostname}${directory}${git_branch}${git_status}${python}${rust}${nodejs}${docker_context}${package}${aws}${gcloud}${cmd_duration}${fill}${time}
+$character"""
+
+[fill]
+symbol = '·'
+style = 'dimmed white'
+
+[python]
+format = '[${symbol}${version}]($style) '
+
+[package]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[time]
+disabled = false
+format = '[$time]($style)'
+style = 'dimmed white'
+time_format = ' %Y-%m-%d %H:%M'
