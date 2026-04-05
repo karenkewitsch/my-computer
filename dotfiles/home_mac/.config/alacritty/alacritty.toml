@@ -4,4 +4,9 @@ general.import = [ "~/.config/alacritty/common.toml" ]
 size = 12
 
 [window]
-decorations = "Transparent"
+decorations = "None"
+
+[keyboard]
+bindings = [
+  { key = "w", mods = "Control", action = "Quit" },
+]
