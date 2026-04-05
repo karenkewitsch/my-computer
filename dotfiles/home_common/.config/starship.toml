@@ -18,4 +18,4 @@ disabled = true
 disabled = false
 format = '[$time]($style)'
 style = 'dimmed white'
-time_format = ' %Y-%m-%d %H:%M'
+time_format = ' %H:%M'
