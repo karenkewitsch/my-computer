@@ -21,14 +21,23 @@ sudo pacman -S --needed \
     zsh \
     github-cli
 
-# aws cli / also update
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-rm -rf awscliv2.zip aws/
+# aws cli
+if ! command -v aws &>/dev/null; then
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
+    unzip /tmp/awscliv2.zip -d /tmp
+    sudo /tmp/aws/install
+    rm -rf /tmp/awscliv2.zip /tmp/aws
+fi
 
 # common installs
 . "$this_dir/installs_common.sh"
+
+# dotfiles
+stow -d "$this_dir/dotfiles" -t ~ home_common
+stow -d "$this_dir/dotfiles" -t ~ home_omarchy
+mkdir -p ~/.local/share/applications
+stow -d "$this_dir/dotfiles" -t ~/.local/share/applications webapps_omarchy
+grep -q "source ~/.zshrc_include.zsh" ~/.zshrc 2>/dev/null || echo "source ~/.zshrc_include.zsh" >> ~/.zshrc
 
 # setup ssh keys with github
 bash "$this_dir/installs/github_ssh.sh"

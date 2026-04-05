@@ -21,46 +21,48 @@ if ! xcode-select -p &>/dev/null; then
     until xcode-select -p &>/dev/null; do sleep 5; done
 fi
 
-# installing homebrew
+# homebrew
 if ! command -v brew &>/dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# some brew installs
-brew install --cask lunar # https://lunar.fyi/
+# cli tools
 brew install stow
 brew install fontconfig
 brew install font-hack-nerd-font
 brew install --cask font-caskaydia-mono-nerd-font
-brew install starship # shell-prompt
+brew install starship # shell prompt
 brew install fzf # fuzzy finder -> github.com/junegunn/fzf
-brew install alacritty
-brew install eza
+brew install eza # ls replacement
+brew install gh
+
+# apps
+brew install --cask alacritty
 brew install --cask visual-studio-code
 brew install --cask google-chrome
 brew install --cask nikitabobko/tap/aerospace
 brew install --cask bitwarden
-brew install gh
+brew install --cask lunar # https://lunar.fyi/
+brew install --cask docker
+brew install --cask slack
 
-# rust install
-if ! command -v rustup &>/dev/null; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-fi
-
-# set settings config
+# macos settings
 defaults write com.apple.Finder AppleShowAllFiles true
-killall Finder
 defaults write com.apple.dock autohide 1
 defaults write "Apple Global Domain" _HTHideMenuBar 1
 defaults write "Apple Global Domain" SLSMenuBarUseBlurredAppearance 0
 defaults write com.apple.AppleMultitouchTrackpad Clicking 1
-
-# job specifics
-brew install --cask slack
+killall Finder
+killall Dock
 
 # common installs
 . "$this_dir/installs_common.sh"
+
+# dotfiles
+stow -d "$this_dir/dotfiles" -t ~ home_common
+stow -d "$this_dir/dotfiles" -t ~ home_mac
+grep -q "source ~/.zshrc_include.zsh" ~/.zshrc 2>/dev/null || echo "source ~/.zshrc_include.zsh" >> ~/.zshrc
 
 # setup ssh keys with github
 bash "$this_dir/installs/github_ssh.sh"
