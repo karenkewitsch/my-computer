@@ -1,26 +1,16 @@
 #!/bin/bash
 
 # Setup SSH key for GitHub on a new machine
-# Usage: ./installs/github_ssh.sh [email]
 
 set -e
 
-email="${1:-}"
-if [ -z "$email" ]; then
-    read -p "Enter your GitHub email: " email
-fi
+email="markusks91@me.com"
 
 key_path="$HOME/.ssh/id_ed25519"
 
 # Generate SSH key
 if [ -f "$key_path" ]; then
-    echo "SSH key already exists at $key_path"
-    read -p "Overwrite? (y/N): " overwrite
-    if [ "$overwrite" != "y" ]; then
-        echo "Using existing key."
-    else
-        ssh-keygen -t ed25519 -C "$email" -f "$key_path"
-    fi
+    echo "SSH key already exists at $key_path, skipping generation."
 else
     ssh-keygen -t ed25519 -C "$email" -f "$key_path"
 fi
@@ -57,25 +47,38 @@ else
 fi
 
 # Add key to GitHub via gh CLI
-if command -v gh &>/dev/null; then
-    echo ""
-    echo "Adding SSH key to GitHub via gh CLI..."
-    if [ "$(uname)" = "Darwin" ]; then
-        hostname=$(scutil --get ComputerName 2>/dev/null || hostname -s)
-    else
-        hostname=$(hostname -s)
-    fi
+if [ "$(uname)" = "Darwin" ]; then
+    hostname=$(scutil --get ComputerName 2>/dev/null || hostname -s)
+else
+    hostname=$(hostname -s)
+fi
+key_blob="$(awk '{print $2}' "$key_path.pub")"
+
+if ! command -v gh &>/dev/null; then
+    echo "gh CLI not found. Add the key manually:"
+    cat "$key_path.pub"
+    echo "Add it at: https://github.com/settings/ssh/new"
+elif ! gh auth status &>/dev/null; then
     gh auth login -p ssh -h github.com -w
     gh ssh-key add "$key_path.pub" -t "$hostname"
     echo "SSH key added to GitHub!"
 else
-    echo ""
-    echo "gh CLI not found. Install it or add the key manually."
-    echo "Your public key:"
-    echo ""
-    cat "$key_path.pub"
-    echo ""
-    echo "Add it at: https://github.com/settings/ssh/new"
+    existing=$(gh ssh-key list 2>/dev/null | grep -F "$key_blob")
+    if [ -z "$existing" ]; then
+        gh ssh-key add "$key_path.pub" -t "$hostname"
+        echo "SSH key added to GitHub!"
+    else
+        existing_title=$(echo "$existing" | cut -f1)
+        if [ "$existing_title" = "$hostname" ]; then
+            echo "SSH key already on GitHub with correct name, skipping."
+        else
+            key_id=$(echo "$existing" | awk -F'\t' '{print $4}')
+            echo "SSH key on GitHub has name '$existing_title', expected '$hostname'. Updating..."
+            gh ssh-key delete "$key_id" --yes
+            gh ssh-key add "$key_path.pub" -t "$hostname"
+            echo "SSH key renamed on GitHub."
+        fi
+    fi
 fi
 
 # Test the connection
