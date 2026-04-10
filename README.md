@@ -21,10 +21,12 @@ bash installs_omarchy.sh
 
 ### macOS manual steps
 
-Keyboard shortcuts:
-- Switch ctrl/cmd keys
-- Turn off mission control
-- Set close/quit app to ctrl (App Shortcuts -> All Applications -> 'Close Window' & 'Close')
-- Set spotlight to ctrl
+- Keyboard shortcuts:
+    - Switch ctrl/cmd keys
+    - Turn off mission control
+    - Set close/quit app to ctrl (App Shortcuts -> All Applications -> 'Close Window' & 'Close')
+    - Set spotlight to ctrl
+- Soft touch click trackpad, Trackpad -> Point & Click -> Tap to click
+- Link other account calender 
 
 VSCode shortcuts currently rely on the ctrl/cmd switch.

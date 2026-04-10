@@ -1,4 +1,4 @@
-format = """${username}${hostname}${directory}${git_branch}${git_status}${python}${rust}${nodejs}${docker_context}${package}${aws}${gcloud}${cmd_duration}${fill}${time}
+format = """${username}${hostname}${directory}${python}${git_branch}${git_status}${rust}${nodejs}${docker_context}${package}${aws}${gcloud}${cmd_duration}${fill}${time}
 $character"""
 
 [fill]
@@ -6,7 +6,7 @@ symbol = '·'
 style = 'dimmed white'
 
 [python]
-format = '[${symbol}${version}]($style) '
+format = '[${symbol}]($style)'
 
 [package]
 disabled = true
