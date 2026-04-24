@@ -9,3 +9,5 @@ args = ["-l"]
 
 [window]
 decorations = "None"
+[terminal]
+osc52 = "CopyPaste"
